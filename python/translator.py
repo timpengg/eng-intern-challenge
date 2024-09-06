@@ -13,7 +13,7 @@ CAPITAL_PREFIX = ".....0"  # Braille prefix for capitalization
 NUMBER_PREFIX = "0.0000"   # Braille prefix for numbers
 
 # Function to translate English text to Braille in "0" and "." format
-def text_to_braille(text_string):
+def string_to_braille(text_string):
     translated = ""
     number_mode = False  # To track if we are in number mode
 
@@ -39,7 +39,7 @@ def text_to_braille(text_string):
 english_dict = {v: k for k, v in braille_dict.items()}
 
 # Function to translate Braille in "0" and "." format to English
-def braille_to_text(braille_string):
+def braille_to_string(braille_string):
     translated = ""
     parts = braille_string.split()  # Split Braille input by spaces
     is_capital = False
@@ -73,10 +73,10 @@ def main():
     # Check if input is in Braille or English
     if is_braille(user_input):
         # Output English translation
-        print(braille_to_text(user_input))
+        print(braille_to_string(user_input))
     else:
         # Output Braille translation
-        print(text_to_braille(user_input))
+        print(string_to_braille(user_input))
 
 if __name__ == "__main__":
     main()
